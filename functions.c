@@ -31,3 +31,23 @@ void calcVariance() {
     }
 
 }
+
+//Lasketaan taulukon keskiarvo
+float calculateAverage(*table, int len) {
+    int i;
+    float sum = 0;
+    for(i = 0; i<len;i++) {
+        sum+=table[i];
+    }
+    return sum/len;
+}
+
+//Lasketaan taulukon varianssi
+float calculateVariance(*table, int len, float average){
+    float var = 0;
+    int i;
+    for(i = 0; i<len; i++) {
+        var += pow(table[i]+average, 2);
+    }
+    return var/len;
+}
